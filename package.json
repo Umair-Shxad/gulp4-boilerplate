@@ -1,0 +1,37 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "start": "gulp serve",
+    "prod": "cross-env NODE_ENV=prod gulp"
+  },
+  "author": "webdevbroz",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "gulp": "^4.0.2",
+    "gulp-accessibility": "^3.1.1",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-if": "^3.0.0",
+    "gulp-include": "^2.4.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.62.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.2.3",
+    "browser-sync": "^2.29.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssbeautify": "^3.0.1",
+    "gulp-handlebars-file-include": "^1.0.0",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-htmlmin": "^5.0.1"
+  }
+}

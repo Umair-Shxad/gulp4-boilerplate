@@ -1,0 +1,12 @@
+
+const test2 = {
+    name: 'learn gulp'
+}
+
+let newvar = 'new bulid testas';
+
+document.querySelector('h2').innerHTML  = newvar;
+let myname = 'new person';
+
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiLCJ0ZXN0Mi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FDUEE7QUFDQTtBQUNBIiwiZmlsZSI6ImFsbC5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5jb25zdCB0ZXN0MiA9IHtcclxuICAgIG5hbWU6ICdsZWFybiBndWxwJ1xyXG59XHJcblxyXG5sZXQgbmV3dmFyID0gJ25ldyBidWxpZCB0ZXN0YXMnO1xyXG5cclxuZG9jdW1lbnQucXVlcnlTZWxlY3RvcignaDInKS5pbm5lckhUTUwgID0gbmV3dmFyOyIsImxldCBteW5hbWUgPSAnbmV3IHBlcnNvbic7XHJcblxyXG4iXX0=
