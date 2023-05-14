@@ -1,8 +1,7 @@
-
 const test2 = {
-    name: 'learn gulp'
-}
+  name: "learn gulp",
+};
 
-let newvar = 'new bulid testas';
+let newvar = "new bulid testing";
 
-document.querySelector('h2').innerHTML  = newvar;
+document.querySelector("h2").innerHTML = newvar;

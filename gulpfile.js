@@ -1,5 +1,5 @@
 // Uncommit when doing production
-require("dotenv").config();
+// require("dotenv").config();
 const { src, dest, series, watch, parallel } = require("gulp");
 const gulpIf = require("gulp-if");
 const include = require("gulp-include");
@@ -9,7 +9,7 @@ const sourcemaps = require("gulp-sourcemaps");
 // HTML
 const htmlmin = require("gulp-htmlmin");
 const htmlBeautify = require("gulp-html-beautify");
-const gulpHandlebarsFileInclude = require('gulp-handlebars-file-include');
+const gulpHandlebarsFileInclude = require("gulp-handlebars-file-include");
 // styles
 const scss = require("gulp-sass")(require("sass"));
 const autoPrefixer = require("gulp-autoprefixer");
@@ -19,19 +19,19 @@ const cssMinify = require("gulp-clean-css");
 const jsMinify = require("gulp-terser");
 const babel = require("gulp-babel");
 // Others
-const accessibility = require('gulp-accessibility');
-const { init,reload } = require("browser-sync");
+const accessibility = require("gulp-accessibility");
+const { init, reload } = require("browser-sync");
 
 // BrowserSync
-const browserSync = require('browser-sync').create();
+const browserSync = require("browser-sync").create();
 // Production
 const isProd = process.env.NODE_ENV === "prod";
 
 // SOURCE VARIABLES
 const PUBLIC = "public/";
 const SRC_HTML_PATH = "./src/*.html";
-const SRC_PARTIALS_PATH = "./src/partials/*.*"
-const DEST_HTML_PATH = "./public/**/*.html"
+const SRC_PARTIALS_PATH = "./src/partials/*.*";
+const DEST_HTML_PATH = "./public/**/*.html";
 const SRC_STYLES_PATH = "./src/styles/styles.scss";
 const SRC_ALLSTYLES_PATH = "./src/styles/**/*.scss";
 const DEST_STYLES_PATH = "./public/assets/styles/";
@@ -45,7 +45,7 @@ const nothtmlFile = ["./src/*.*", "!src/*.html"];
 
 function html() {
   return src(htmlFile)
-    .pipe(gulpHandlebarsFileInclude({}, {maxRecursion: 25}))
+    .pipe(gulpHandlebarsFileInclude({}, { maxRecursion: 25 }))
     .pipe(htmlBeautify())
     .pipe(
       gulpIf(
@@ -63,9 +63,11 @@ function rootFiles() {
 function styles() {
   return src(SRC_STYLES_PATH)
     .pipe(gulpIf(!isProd, sourcemaps.init()))
-    .pipe(scss({
-      includePaths: ['node_modules']
-    }))
+    .pipe(
+      scss({
+        includePaths: ["node_modules"],
+      })
+    )
     .pipe(autoPrefixer(PREFIXER_VERSIONS))
     .pipe(gulpIf(!isProd, sourcemaps.write()))
     .pipe(
@@ -99,14 +101,13 @@ function del() {
   return src(PUBLIC, { allowEmpty: true, read: false }).pipe(clean());
 }
 
-
 function serve() {
   init({
     open: true,
     server: {
-      baseDir: './public/'
-    }
-  })
+      baseDir: "./public/",
+    },
+  });
 }
 
 function browserSyncReload(done) {
@@ -126,14 +127,15 @@ function watchTask() {
 exports.serve = parallel(html, styles, scripts, rootFiles, watchTask, serve);
 exports.default = series(del, html, styles, scripts, rootFiles);
 
-
-// Check Accessibility 
+// Check Accessibility
 function accessibilityReport() {
   return src(DEST_HTML_PATH)
-    .pipe(accessibility({
-      force: true
-    }))
-    .on('error', console.log)
-    .pipe(accessibility.report({ reportType: 'txt' }))
-    .pipe(gulp.dest('reports'));
+    .pipe(
+      accessibility({
+        force: true,
+      })
+    )
+    .on("error", console.log)
+    .pipe(accessibility.report({ reportType: "txt" }))
+    .pipe(gulp.dest("reports"));
 }
