@@ -18,7 +18,7 @@ Clone the project from the GitHub repository:
 
 ## Copy code
 ``` 
-git clone https://github.com/
+git clone https://github.com/Umair-Shxad/gulp4-boilerplate.git
 ```
 ## Installation
 Install the required packages from the package.json file by running the following command:
